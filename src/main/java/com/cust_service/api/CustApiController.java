@@ -51,12 +51,6 @@ public class CustApiController {
         return custService.update(id, requestDto);
     }
 
-    @Operation(summary = "전화번호로 고객 찾기")
-    @PostMapping("/search")
-    public CustListResponseDto findByPhoneNumber(@RequestBody String phoneNumber) {
-        return custService.findByPhoneNumber(phoneNumber);
-    }
-
     @Operation(summary = "이름으로 고객 찾기")
     @GetMapping("/findId/{name}")
     public List<CustListResponseDto> findByName(@RequestParam("name") String name) {

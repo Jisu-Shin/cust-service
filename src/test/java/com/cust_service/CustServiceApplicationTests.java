@@ -2,6 +2,7 @@ package com.cust_service;
 
 import com.cust_service.domain.Cust;
 import com.cust_service.domain.CustSmsConsentType;
+import com.cust_service.dto.CustListResponseDto;
 import com.cust_service.dto.CustSaveRequestDto;
 import com.cust_service.repository.JpaCustRepository;
 import com.cust_service.service.CustService;
@@ -48,4 +49,5 @@ class CustServiceApplicationTests {
 		custService.save(cust);
 		assertThrows(IllegalStateException.class, () -> custService.save(cust2));
 	}
+
 }

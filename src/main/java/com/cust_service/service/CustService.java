@@ -54,12 +54,6 @@ public class CustService {
         return new CustListResponseDto(entity);
     }
 
-    public CustListResponseDto findByPhoneNumber(String phoneNumber) {
-        String subStringPhoneNumber = phoneNumber.substring(phoneNumber.length()-4);
-        Cust entity = custRepository.findByPhoneNumber(phoneNumber)
-                .orElseThrow(()->new IllegalArgumentException("해당 고객이 없습니다. 전화번호 = " + subStringPhoneNumber));
-        return new CustListResponseDto(entity);
-    }
 
     /**
      * 회원 전체 조회
