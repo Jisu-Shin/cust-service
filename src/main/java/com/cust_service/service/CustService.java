@@ -69,4 +69,10 @@ public class CustService {
                 .map(CustListResponseDto::new)
                 .collect(Collectors.toList());
     }
+
+    public List<CustListResponseDto> findByName(String name) {
+        return custRepository.findByNameLike("%"+name+"%").stream()
+                .map(CustListResponseDto::new)
+                .collect(Collectors.toList());
+    }
 }
