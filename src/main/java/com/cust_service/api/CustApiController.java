@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Tag(name = "CustApiController", description = "고객 관련 rest api")
-@RequiredArgsConstructor
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/custs")
 public class CustApiController {
 
@@ -24,7 +24,6 @@ public class CustApiController {
     @Operation(summary = "고객 전체 조회")
     @GetMapping("")
     public List<CustListResponseDto> findAllCust() {
-        System.out.println("컨트롤러메서드호출");
         List<CustListResponseDto> list = custService.findAll();
         return list;
     }
@@ -56,6 +55,12 @@ public class CustApiController {
     @PostMapping("/search")
     public CustListResponseDto findByPhoneNumber(@RequestBody String phoneNumber) {
         return custService.findByPhoneNumber(phoneNumber);
+    }
+
+    @Operation(summary = "이름으로 고객 찾기")
+    @GetMapping("/findId/{name}")
+    public List<CustListResponseDto> findByName(@RequestParam("name") String name) {
+        return custService.findByName(name);
     }
 
 
