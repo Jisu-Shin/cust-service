@@ -65,7 +65,14 @@ public class CustService {
     }
 
     public List<CustListResponseDto> findByName(String name) {
+        System.out.println("name = " + name);
         return custRepository.findByNameLike("%"+name+"%").stream()
+                .map(CustListResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
+    public List<CustListResponseDto> findByIdList(List<Long> custIdList) {
+        return custRepository.findByIdIn(custIdList).stream()
                 .map(CustListResponseDto::new)
                 .collect(Collectors.toList());
     }

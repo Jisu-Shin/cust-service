@@ -11,4 +11,5 @@ public interface JpaCustRepository extends JpaRepository<Cust, Long> {
     List<Cust> findAll();
     Optional<Cust> findByName(String name);
     List<Cust> findByNameLike(String name);
+    List<Cust> findByIdIn(List<Long> idList);
 }

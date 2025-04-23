@@ -52,9 +52,16 @@ public class CustApiController {
     }
 
     @Operation(summary = "이름으로 고객 찾기")
-    @GetMapping("/findId/{name}")
+    @GetMapping("/findId")
     public List<CustListResponseDto> findByName(@RequestParam("name") String name) {
+        System.out.println("apiController name = " + name);
         return custService.findByName(name);
+    }
+
+    @Operation(summary = "idList로 고객 다건 조회")
+    @PostMapping("/findByIdList")
+    public List<CustListResponseDto> findByIdList(@RequestBody List<Long> custIdList) {
+        return custService.findByIdList(custIdList);
     }
 
 
