@@ -33,4 +33,4 @@ OO-SMS 프로젝트의 고객(Customer) 도메인을 담당하는 서비스입�
 
 ### 📋 ERD
 
-![cust-service-erd](./docs/images/cust-service-erd.png) <!-- ← ERD 이미지 저장 경로 -->
+![cust-service-erd](./images/cust-service-erd.png) <!-- ← ERD 이미지 저장 경로 -->
